@@ -35,3 +35,13 @@ C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views
 C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Funcionarios\Details.g.cshtml.cs
 C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Funcionarios\Edit.g.cshtml.cs
 C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Funcionarios\Index.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Produtoes\Create.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Produtoes\Delete.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Produtoes\Details.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Produtoes\Edit.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Produtoes\Index.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Extras\Create.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Extras\Delete.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Extras\Details.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Extras\Edit.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Extras\Index.g.cshtml.cs
