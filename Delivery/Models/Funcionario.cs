@@ -8,17 +8,21 @@ namespace Delivery.Models
         public string Nome { get; set; }
         public string Funcao { get; set; }
         public string Contato { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
         public ICollection<Vendas> Vendidos { get; set; } = new List<Vendas>();
         public ICollection<Checkinout> Checkinouts { get; set; } = new List<Checkinout>();
 
         public Funcionario() { }
 
-        public Funcionario(int iD, string nome, string funcao, string contato)
+        public Funcionario(int iD, string nome, string funcao, string contato, string email, string senha)
         {
             ID = iD;
             Nome = nome;
             Funcao = funcao;
             Contato = contato;
+            Email = email;
+            Senha = senha;
         }
 
         public void AddVendidos(Vendas v)
