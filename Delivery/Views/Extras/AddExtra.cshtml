@@ -1,0 +1,26 @@
+@model Delivery.Models.Extra
+
+@{
+    ViewData["Title"] = "Extra adicionado";
+}
+<div>
+    <h4>Extra Adicionado a pizza</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="Vendaes" asp-action="Create" class="btn btn-primary">OK</a>
+</div>

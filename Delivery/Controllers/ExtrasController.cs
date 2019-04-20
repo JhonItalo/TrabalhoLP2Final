@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Delivery.Models;
+using Delivery.Data;
 
 namespace Delivery.Controllers
 {
@@ -147,6 +148,23 @@ namespace Delivery.Controllers
         private bool ExtraExists(int id)
         {
             return _context.Extra.Any(e => e.ID == id);
+        }
+
+        public async Task<IActionResult> AddExtra(int? id)
+        {
+            var extra = await _context.Extra.FindAsync(id);
+            foreach (ProdutoExtra pe in Carrinho.ProdutosExtras)
+            {
+                if (pe.ID == Carrinho.Id && pe.ExtId == null)
+                {
+                    pe.ExtId = extra;
+                    pe.Preco_ext = extra.Preco;
+                    pe.Qtde_ext = 1;
+                    break;
+                }
+            }
+
+            return View(extra);
         }
     }
 }

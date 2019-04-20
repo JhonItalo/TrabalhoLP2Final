@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Delivery.Models;
+using Delivery.Data;
 
 namespace Delivery.Controllers
 {
@@ -77,6 +75,21 @@ namespace Delivery.Controllers
             {
                 return NotFound();
             }
+            return View(produto);
+        }
+
+        public async Task<IActionResult> AddCarrinho(int? id)
+        {
+            var produto = await _context.Produto.FindAsync(id);
+            ProdutoExtra pe = new ProdutoExtra();
+            pe.Qtde_pro = 1;
+            pe.Preco_pro = produto.Preco;
+            pe.ProId = produto;
+            pe.ExtId = null;
+
+            Carrinho.Id = produto.ID;
+            Carrinho.ProdutosExtras.Add(pe);
+
             return View(produto);
         }
 
