@@ -66,7 +66,7 @@ using Delivery.Models;
             WriteLiteral("<nav style=\"height:500px; width:1200px;background-color: #4682B4\">\r\n\r\n\r\n\r\n    <h1 style=\"text-align: center; color: white;\">GAV - Gerenciamento Delivery</h1>\r\n    ");
             EndContext();
             BeginContext(228, 99, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28623f23936b4f6688d9a3c187646fbf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab24f6de775f4f9a910eaab7c16a4f0b", async() => {
                 BeginContext(311, 12, true);
                 WriteLiteral("Funcionários");
                 EndContext();
@@ -91,7 +91,7 @@ using Delivery.Models;
             WriteLiteral("\r\n    <p></p>\r\n    ");
             EndContext();
             BeginContext(346, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "11d47c4c0cbc4b97b02eb49b7dc82d27", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be61df5f74204a35b11f8a4be4c18ac3", async() => {
                 BeginContext(426, 8, true);
                 WriteLiteral("Cardápio");
                 EndContext();
@@ -116,7 +116,7 @@ using Delivery.Models;
             WriteLiteral("\r\n    <p></p>\r\n    ");
             EndContext();
             BeginContext(457, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8219ba637d4a4d7baef147c803ffbceb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e2f091b34ef44542a0a05bfec5c88182", async() => {
                 BeginContext(535, 5, true);
                 WriteLiteral("Venda");
                 EndContext();
@@ -141,7 +141,7 @@ using Delivery.Models;
             WriteLiteral("\r\n    <p></p>\r\n    ");
             EndContext();
             BeginContext(563, 174, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eff7bec0a6fc466caacb42b71189ccb2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0654728d74a54e658191c8b8b778e954", async() => {
                 BeginContext(728, 5, true);
                 WriteLiteral("Caixa");
                 EndContext();

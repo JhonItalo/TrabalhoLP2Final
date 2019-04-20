@@ -92,3 +92,5 @@ C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp
 C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Delivery.dll
 C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Delivery.pdb
 C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Delivery.csproj.CopyComplete
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Produtoes\AddCarrinho.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Extras\AddExtra.g.cshtml.cs
