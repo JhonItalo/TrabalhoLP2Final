@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Delivery.Models.Extra>
+﻿@model IEnumerable<Delivery.Models.Estoque>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Preco)
+                @Html.DisplayNameFor(model => model.Qtde)
             </th>
             <th></th>
         </tr>
@@ -28,17 +28,14 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Preco)
+                @Html.DisplayFor(modelItem => item.Qtde)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a> |
-                <a asp-action="AddExtra" asp-route-id="@item.ID">Add Extra</a>
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-
-<a asp-action="AddExtra" asp-route-id="-1">Sem extras</a>

@@ -1,0 +1,115 @@
+﻿@model Delivery.Models.Vendas
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Vendas</h4>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Sabor da pizza
+            </th>
+            <th>
+                Preço
+            </th>
+            <th>
+                Extra
+            </th>
+            <th>
+                Preço do extra
+            </th>
+            <th>
+                Quantidade
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Produtosextras) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProId.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProId.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExtId.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExtId.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qtde_pro)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<a asp-controller="Produtoes" asp-action="Index" class="btn btn-primary">Buscar Pizza</a>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Total" class="control-label"></label>
+                <label asp-for="Total" class="form-control">
+                    @Html.DisplayFor(model => model.Total)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Metodopagamento" class="control-label"></label>
+                <input asp-for="Metodopagamento" class="form-control" />
+                <span asp-validation-for="Metodopagamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desconto" class="control-label"></label>
+                <input asp-for="Desconto" class="form-control" />
+                <span asp-validation-for="Desconto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rua" class="control-label"></label>
+                <input asp-for="Rua" class="form-control" />
+                <span asp-validation-for="Rua" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bairro" class="control-label"></label>
+                <input asp-for="Bairro" class="form-control" />
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Complemento" class="control-label"></label>
+                <input asp-for="Complemento" class="form-control" />
+                <span asp-validation-for="Complemento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Datahora" class="control-label"></label>
+                <input asp-for="Datahora" class="form-control" />
+                <span asp-validation-for="Datahora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

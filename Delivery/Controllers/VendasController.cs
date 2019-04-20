@@ -10,22 +10,23 @@ using Delivery.Data;
 
 namespace Delivery.Controllers
 {
-    public class ExtrasController : Controller
+    public class VendasController : Controller
     {
         private readonly DeliveryContext _context;
+        private Vendas venda = new Vendas();
 
-        public ExtrasController(DeliveryContext context)
+        public VendasController(DeliveryContext context)
         {
             _context = context;
         }
 
-        // GET: Extras
+        // GET: Vendas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Extra.ToListAsync());
+            return View(await _context.Vendas.ToListAsync());
         }
 
-        // GET: Extras/Details/5
+        // GET: Vendas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +34,51 @@ namespace Delivery.Controllers
                 return NotFound();
             }
 
-            var extra = await _context.Extra
+            var vendas = await _context.Vendas
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (extra == null)
+            if (vendas == null)
             {
                 return NotFound();
             }
 
-            return View(extra);
+            return View(vendas);
         }
 
-        // GET: Extras/Create
+        // GET: Vendas/Create
         public IActionResult Create()
         {
-            return View();
+            venda.Total = 0;
+            foreach (ProdutoExtra pe in Carrinho.ProdutosExtras)
+            {
+                venda.AddProdutosextras(pe);
+                venda.Total += (pe.Preco_ext * pe.Qtde_ext) + (pe.Preco_pro * pe.Qtde_pro);
+            }
+            return View(venda);
         }
 
-        // POST: Extras/Create
+        // POST: Vendas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nome,Preco")] Extra extra)
+        public async Task<IActionResult> Create([Bind("ID,Total,Metodopagamento,Desconto,Rua,Bairro,Numero,Complemento,Datahora")] Vendas vendas)
         {
+            vendas.Produtosextras = venda.Produtosextras;
+            vendas.Total = 0;
+            foreach (ProdutoExtra pe in Carrinho.ProdutosExtras)
+            {
+                vendas.Total += (pe.Preco_ext * pe.Qtde_ext) + (pe.Preco_pro * pe.Qtde_pro);
+            }
             if (ModelState.IsValid)
             {
-                _context.Add(extra);
+                _context.Add(vendas);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(extra);
+            return View(vendas);
         }
 
-        // GET: Extras/Edit/5
+        // GET: Vendas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +86,22 @@ namespace Delivery.Controllers
                 return NotFound();
             }
 
-            var extra = await _context.Extra.FindAsync(id);
-            if (extra == null)
+            var vendas = await _context.Vendas.FindAsync(id);
+            if (vendas == null)
             {
                 return NotFound();
             }
-            return View(extra);
+            return View(vendas);
         }
 
-        // POST: Extras/Edit/5
+        // POST: Vendas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Nome,Preco")] Extra extra)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Total,Metodopagamento,Desconto,Rua,Bairro,Numero,Complemento,Datahora")] Vendas vendas)
         {
-            if (id != extra.ID)
+            if (id != vendas.ID)
             {
                 return NotFound();
             }
@@ -97,12 +110,12 @@ namespace Delivery.Controllers
             {
                 try
                 {
-                    _context.Update(extra);
+                    _context.Update(vendas);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ExtraExists(extra.ID))
+                    if (!VendasExists(vendas.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +126,10 @@ namespace Delivery.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(extra);
+            return View(vendas);
         }
 
-        // GET: Extras/Delete/5
+        // GET: Vendas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,54 +137,30 @@ namespace Delivery.Controllers
                 return NotFound();
             }
 
-            var extra = await _context.Extra
+            var vendas = await _context.Vendas
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (extra == null)
+            if (vendas == null)
             {
                 return NotFound();
             }
 
-            return View(extra);
+            return View(vendas);
         }
 
-        // POST: Extras/Delete/5
+        // POST: Vendas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var extra = await _context.Extra.FindAsync(id);
-            _context.Extra.Remove(extra);
+            var vendas = await _context.Vendas.FindAsync(id);
+            _context.Vendas.Remove(vendas);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ExtraExists(int id)
+        private bool VendasExists(int id)
         {
-            return _context.Extra.Any(e => e.ID == id);
-        }
-
-        public async Task<IActionResult> AddExtra(int? id)
-        {
-            if (id != -1)
-            { 
-                var extra = await _context.Extra.FindAsync(id);
-                foreach (ProdutoExtra pe in Carrinho.ProdutosExtras)
-                {
-                    if (pe.ProId.ID == Carrinho.Id && pe.ExtId == null)
-                    {
-                        pe.ExtId = extra;
-                        pe.Preco_ext = extra.Preco;
-                        pe.Qtde_ext = 1;
-                        break;
-                    }
-                }
-
-                return View(extra);
-            }
-            else
-            {
-                return View();
-            }
+            return _context.Vendas.Any(e => e.ID == id);
         }
     }
 }

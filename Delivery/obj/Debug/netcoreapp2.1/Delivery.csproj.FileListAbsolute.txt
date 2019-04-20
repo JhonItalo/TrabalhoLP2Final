@@ -94,3 +94,23 @@ C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp
 C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Delivery.csproj.CopyComplete
 C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Produtoes\AddCarrinho.g.cshtml.cs
 C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Extras\AddExtra.g.cshtml.cs
+<<<<<<< HEAD
+=======
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Create.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Delete.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Details.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Edit.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Index.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Extras\AddExtra.g.cshtml.cs
+C:\Eu\LP2\Delivery\SIstema Delivery\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Produtoes\AddCarrinho.g.cshtml.cs
+>>>>>>> 7895cf518ac87171e128da52168f8e7890722a38
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Create.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Delete.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Details.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Edit.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Estoques\Index.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Vendas\Create.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Vendas\Delete.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Vendas\Details.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Vendas\Edit.g.cshtml.cs
+C:\Users\pbarb\Documents\Projetos\TrabalhoLP2Final\Delivery\obj\Debug\netcoreapp2.1\Razor\Views\Vendas\Index.g.cshtml.cs

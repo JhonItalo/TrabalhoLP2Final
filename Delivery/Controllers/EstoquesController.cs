@@ -6,26 +6,25 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Delivery.Models;
-using Delivery.Data;
 
 namespace Delivery.Controllers
 {
-    public class ExtrasController : Controller
+    public class EstoquesController : Controller
     {
         private readonly DeliveryContext _context;
 
-        public ExtrasController(DeliveryContext context)
+        public EstoquesController(DeliveryContext context)
         {
             _context = context;
         }
 
-        // GET: Extras
+        // GET: Estoques
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Extra.ToListAsync());
+            return View(await _context.Estoque.ToListAsync());
         }
 
-        // GET: Extras/Details/5
+        // GET: Estoques/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +32,39 @@ namespace Delivery.Controllers
                 return NotFound();
             }
 
-            var extra = await _context.Extra
+            var estoque = await _context.Estoque
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (extra == null)
+            if (estoque == null)
             {
                 return NotFound();
             }
 
-            return View(extra);
+            return View(estoque);
         }
 
-        // GET: Extras/Create
+        // GET: Estoques/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Extras/Create
+        // POST: Estoques/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nome,Preco")] Extra extra)
+        public async Task<IActionResult> Create([Bind("ID,Nome,Qtde")] Estoque estoque)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(extra);
+                _context.Add(estoque);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(extra);
+            return View(estoque);
         }
 
-        // GET: Extras/Edit/5
+        // GET: Estoques/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +72,22 @@ namespace Delivery.Controllers
                 return NotFound();
             }
 
-            var extra = await _context.Extra.FindAsync(id);
-            if (extra == null)
+            var estoque = await _context.Estoque.FindAsync(id);
+            if (estoque == null)
             {
                 return NotFound();
             }
-            return View(extra);
+            return View(estoque);
         }
 
-        // POST: Extras/Edit/5
+        // POST: Estoques/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Nome,Preco")] Extra extra)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Nome,Qtde")] Estoque estoque)
         {
-            if (id != extra.ID)
+            if (id != estoque.ID)
             {
                 return NotFound();
             }
@@ -97,12 +96,12 @@ namespace Delivery.Controllers
             {
                 try
                 {
-                    _context.Update(extra);
+                    _context.Update(estoque);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ExtraExists(extra.ID))
+                    if (!EstoqueExists(estoque.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +112,10 @@ namespace Delivery.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(extra);
+            return View(estoque);
         }
 
-        // GET: Extras/Delete/5
+        // GET: Estoques/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,54 +123,30 @@ namespace Delivery.Controllers
                 return NotFound();
             }
 
-            var extra = await _context.Extra
+            var estoque = await _context.Estoque
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (extra == null)
+            if (estoque == null)
             {
                 return NotFound();
             }
 
-            return View(extra);
+            return View(estoque);
         }
 
-        // POST: Extras/Delete/5
+        // POST: Estoques/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var extra = await _context.Extra.FindAsync(id);
-            _context.Extra.Remove(extra);
+            var estoque = await _context.Estoque.FindAsync(id);
+            _context.Estoque.Remove(estoque);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ExtraExists(int id)
+        private bool EstoqueExists(int id)
         {
-            return _context.Extra.Any(e => e.ID == id);
-        }
-
-        public async Task<IActionResult> AddExtra(int? id)
-        {
-            if (id != -1)
-            { 
-                var extra = await _context.Extra.FindAsync(id);
-                foreach (ProdutoExtra pe in Carrinho.ProdutosExtras)
-                {
-                    if (pe.ProId.ID == Carrinho.Id && pe.ExtId == null)
-                    {
-                        pe.ExtId = extra;
-                        pe.Preco_ext = extra.Preco;
-                        pe.Qtde_ext = 1;
-                        break;
-                    }
-                }
-
-                return View(extra);
-            }
-            else
-            {
-                return View();
-            }
+            return _context.Estoque.Any(e => e.ID == id);
         }
     }
 }
